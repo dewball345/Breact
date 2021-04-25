@@ -1,4 +1,4 @@
-from breact_code.baseclasses import *
+from breact.baseclasses import *
 from browser.html import *
 from browser import document, bind, timer
 

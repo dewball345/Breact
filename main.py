@@ -1,7 +1,7 @@
-from breact_code.baseclasses import *
+from breact.baseclasses import *
 from browser.html import *
 from browser import document, bind, timer, window
-from breact_code.router import *
+from breact.router import *
 from pages.quiz import *
 from pages.todolist import *
 from pages.app import *

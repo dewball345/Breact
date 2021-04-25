@@ -1,5 +1,5 @@
 from browser import document, html, window, timer, bind
-from breact_code.baseclasses import *
+from breact.baseclasses import *
 
 
 '''
