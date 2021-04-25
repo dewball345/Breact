@@ -1,0 +1,152 @@
+class Base:
+    def __init__(self):
+        self.state = {}
+        self.containers = GenerateContainers()
+    # def setState(self, attrs, inner=None, outer=None):
+    #     if inner == None:
+    #         inner = self.containers.content
+    #     if outer == None:
+    #         outer = self.containers.container
+    #     for attr in attrs.keys():
+    #         self.state[attr] = attrs[attr]
+    #     del document[inner.id]
+    #     inner.innerHTML = html.DIV(id=self.inner.id)
+        
+    def setState(self, attrs): 
+        for attr in attrs.keys():
+            self.state[attr] = attrs[attr]
+        del document[self.containers.innerId]
+        self.containers.content = html.DIV(id=self.containers.innerId)
+        document[self.containers.outerId] <= self.update()
+    def render(self):
+        self.containers.container <= self.update()
+        return self.containers.container
+
+class UpDown(Base):
+    def __init__(self):
+        self.state = {"up":0, "down":0}
+        self.containers = GenerateContainers()
+    def update(self):
+        def reset(e):
+            print("HI")
+            self.setState({
+                "up": 0,
+                "down": 0
+            })
+        def change():
+            print(self.state["up"])
+            self.setState({
+                "up": self.state["up"]+1, 
+                "down": self.state["down"]-1
+                })
+            
+
+        up = html.H1(self.state["up"])
+        down = html.H1(self.state["down"])
+        button = html.BUTTON("reset")
+        self.containers.content <= up
+        self.containers.content <= down
+        self.containers.content <= button
+        button.bind("click", reset)
+        timer.set_timeout(change, 1000)
+        print("One sec")
+        # print(self.state)
+        return self.containers.content
+
+class TextField(Base):
+    def __init__(self, title, description):
+        self.state={"text":""}
+        self.title=title
+        self.description= description
+    def update(self):
+        h1 = html.H1(self.state["text"])
+        txt = html.INPUT(type="text", name=self.title, value=self.state["text"])
+        txt.focus()
+        h4 = html.H4(self.description)
+        
+        txt.bind("keyup", lambda x: self.setState({"text": x.target.value}))
+        self.containers.content <= h1
+        self.containers.content <= txt
+        self.containers.content <= h4
+
+        return self.containers.content
+
+# self.outerId = "id" + str(random.randint(1, 999999999))
+# self.innerId = "id" + str(random.randint(1, 999999999))
+# self.container = html.DIV(id=self.outerId)
+# self.content = html.DIV(id=self.innerId)
+
+
+# from baseclasses import *
+# from browser.html import *
+# from browser import document, bind, timer, window
+
+# print(window.location.hash)
+
+
+# class Link(Base):
+#     def __init__(self, link):
+#         self.link = link
+#     def render(self):
+#         button = BUTTON(self.link)
+#         @bind(button, "click")
+#         def link(e):
+#             window.location.hash = "#" + self.link
+#         return button
+
+# class Page(Base):
+#     def __init__(self, title):
+#         self.title = title
+#     def render(self):
+#         return group(DIV(), [
+#             H1(self.title),
+#             Link('/').render(),
+#             Link('/page1').render(),
+#             Link('/page2').render()
+#         ])
+
+# class RouterTest(StatefulSegment):
+#     def __init__(self):
+#         self.oi = GenerateContainers()
+#         # self.state = {"home": "/"}
+#         self.routes = {
+#             "/" : Page("Home").render,
+#             "/page1": Page("Page 1").render,
+#             "/page2": Page("Page 2").render
+#         }
+
+#     def findComponentByPath(self, path):
+#         if path in self.routes:
+#             return self.routes[path]
+#         else:
+#             return None
+#     def update(self, one_state_change=False):
+#         path = window.location.hash[1:].lower()
+#         if path == "":
+#             window.location.hash = "#/"
+#             path = "/"
+#         component = self.findComponentByPath(path)
+#         if component == None:
+#             component = Page("error").render
+
+#         return component()
+
+# # def appendRouter(d):
+# #     print("in append") 
+# #     print("D", d)
+# #     document <= "hi" #RouterTest().render()
+# # # print(window.onload)
+# # # window.onhashchange(appendRouter)
+# # def thing():
+# #     print("here")
+# #     window.onload(appendRouter)
+# # timer.set_timeout(thing, 1000)
+
+# document <= (rt := RouterTest()).render()
+
+# def thing(e):
+#     # print("loaded", dir(e))
+#     rt.setState({})
+
+# window.onload = thing
+# window.onhashchange = thing
