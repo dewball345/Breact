@@ -56,4 +56,4 @@ Please write issues in the issue tracker
 License
 -------
 
-I will finish this up soon.
+dewball345/Breact is licensed under the BSD 3-Clause "New" or "Revised" License
