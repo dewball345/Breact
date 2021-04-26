@@ -34,7 +34,7 @@ Features
 Usage
 ------------
 
-You can find a tutorial at ```tutorial.md```
+You can find a tutorial at [this link](TUTORIAL.md)
 
 Examples
 ------ 
