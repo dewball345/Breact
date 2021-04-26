@@ -31,7 +31,7 @@ def homePage():
         Link("/todo").render(BUTTON("Simple Todolist", Class="btn btn-primary m-2")),
         Link('/quiz').render(BUTTON("Small Quiz", Class="btn btn-primary m-2")),
         Link('/playground').render(BUTTON("A Little Playground", Class="btn btn-primary m-2")),
-        Link('/router-playground').render(BUTTON("Router Playground", Class="btn btn-primary m-2"))
+        Link('/router-playground').render(BUTTON("Router Playground", Class="btn btn-warning m-2"))
     ])
 
 document <= Router({

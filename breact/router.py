@@ -26,6 +26,7 @@ class Router(StatefulSegment):
         # self.state = {"home": "/"}
         self.routes = routes
         self.err_component = err_component
+        # self.prev_route = prev_route
 
     def findComponentByPath(self, path):
         if path in self.routes:
@@ -43,11 +44,15 @@ class Router(StatefulSegment):
         return self.oi.container
     def update(self, one_state_change=False):
         path = window.location.hash[1:].lower()
+        print("PATH:", path)
         if path == "":
             window.location.hash = "#/"
             path = "/"
+        # if path[-1] == "/":
+        #     path = path[:-1]
         component = self.findComponentByPath(path)
         if component == None:
+            print(self.routes, path)
             component = self.err_component
 
         return component()

@@ -15,6 +15,7 @@ class Page(Base):
     def render(self):
         return group(DIV(), [
             H1(self.title),
+            H2("I'm having trouble implementing nested routers. In the future this may be solved"),
             Link('/router-playground/').render(BUTTON('/')),
             Link('/router-playground/page1').render(BUTTON('/page1')),
             Link('/router-playground/page2').render(BUTTON('/page2'))
