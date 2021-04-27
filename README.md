@@ -13,6 +13,7 @@ You can find the tutorial at: https://dev.to/pixari/build-a-very-basic-spa-javas
 Breact is powered by Brython.
 - [Website](https://brython.info/)
 - [Git repo](https://github.com/brython-dev/brython)
+
 Contributions are welcome as the project is largely unfinished; for example, sanitizing data to prevent XSS
 attacts, lifecycle methods, and many more need to be implemented.
 
