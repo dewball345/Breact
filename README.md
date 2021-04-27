@@ -71,7 +71,7 @@ Contribute
 - Issue Tracker: github.com/dewball345/Breact/issues
 - Source Code: github.com/dewball345/Breact
 
-For now don't contribute anything yet, but once i finish this up, I will set up a contributing.md
+Make sure that you follow the [Code of Conduct](CODE_OF_CONDUCT.md)
 
 Support
 -------
