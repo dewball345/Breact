@@ -10,6 +10,9 @@ code is around 40 lines of code and the simple hash router, which is a python im
 router in Dev.to's tutorial, caps at around 50. 
 You can find the tutorial at: https://dev.to/pixari/build-a-very-basic-spa-javascript-router-2k4p
 
+Breact is powered by Brython.
+- [Website](https://brython.info/)
+- [Git repo](https://github.com/brython-dev/brython)
 Contributions are welcome as the project is largely unfinished; for example, sanitizing data to prevent XSS
 attacts, lifecycle methods, and many more need to be implemented.
 
