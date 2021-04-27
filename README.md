@@ -59,6 +59,8 @@ Examples
 An example breact project can be found at:
 https://github.com/dewball345/breact-example
 
+Want to see a [Live Demo](https://breact-playground.web.app/#/)?
+
 Contribute
 ----------
 
