@@ -1,5 +1,7 @@
 # Breact: A python library for single page web apps
 
+This project was started by dewball345. 
+
 Breact is similar to react, with components and state. The main difference, however, 
 is that Breact doesn't have a virtual dom; 
 instead, each stateful element (element that uses setState) is assigned a unique id and is retrieved
@@ -54,7 +56,8 @@ Then, follow the normal directions for firebase hosting. Select the directory th
 
 Examples
 ------ 
-View the ```/pages``` directory to view examples
+An example breact project can be found at:
+https://github.com/dewball345/breact-example
 
 Contribute
 ----------
