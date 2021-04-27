@@ -36,6 +36,22 @@ Usage
 
 You can find a tutorial at [this link](TUTORIAL.md)
 
+(VERY IMPORTANT) Hosting
+------
+Breact cannot work with github hosting for some reason(probably because it is for static sites)
+
+You can use firebase hosting instead.
+
+Solution
+
+Put your main code in a directory. You can name it anything.
+```
+.
+└── fbhosting/
+    └── your main code
+```
+Then, follow the normal directions for firebase hosting. Select the directory that you put your main code in when it asks for a ```/public``` folder.
+
 Examples
 ------ 
 View the ```/pages``` directory to view examples
