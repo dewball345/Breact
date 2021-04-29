@@ -1,9 +1,7 @@
 from browser import document, html, window
 import random
-from abc import ABC, abstractmethod
 
-class Base(ABC):
-    @abstractmethod
+class Base:
     def render(self):
         pass
 
