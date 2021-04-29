@@ -1,5 +1,7 @@
 # Breact: A python library for single page web apps
 
+This project was started by dewball345. 
+
 Breact is similar to react, with components and state. The main difference, however, 
 is that Breact doesn't have a virtual dom; 
 instead, each stateful element (element that uses setState) is assigned a unique id and is retrieved
@@ -7,6 +9,10 @@ and changed when necessary. There isn't much that I have added - just the bare m
 code is around 40 lines of code and the simple hash router, which is a python implementation of the simple
 router in Dev.to's tutorial, caps at around 50. 
 You can find the tutorial at: https://dev.to/pixari/build-a-very-basic-spa-javascript-router-2k4p
+
+Breact is powered by Brython.
+- [Website](https://brython.info/)
+- [Git repo](https://github.com/brython-dev/brython)
 
 Contributions are welcome as the project is largely unfinished; for example, sanitizing data to prevent XSS
 attacts, lifecycle methods, and many more need to be implemented.
@@ -54,7 +60,10 @@ Then, follow the normal directions for firebase hosting. Select the directory th
 
 Examples
 ------ 
-View the ```/pages``` directory to view examples
+An example breact project can be found at:
+https://github.com/dewball345/breact-example
+
+Want to see a [Live Demo](https://breact-playground.web.app/#/)?
 
 Contribute
 ----------
@@ -62,7 +71,7 @@ Contribute
 - Issue Tracker: github.com/dewball345/Breact/issues
 - Source Code: github.com/dewball345/Breact
 
-For now don't contribute anything yet, but once i finish this up, I will set up a contributing.md
+Make sure that you follow the [Code of Conduct](CODE_OF_CONDUCT.md)
 
 Support
 -------
