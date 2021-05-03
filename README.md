@@ -44,9 +44,13 @@ You can find a tutorial at [this link](TUTORIAL.md)
 
 (VERY IMPORTANT) Hosting
 ------
-Breact cannot work with github hosting for some reason(probably because it is for static sites)
+Breact can work with github hosting, but the process is kind of finicky and tedious.
 
-You can use firebase hosting instead.
+For one, you will have to change your script tags to the raw github link, or it will not work.
+
+In addition, you will have to create your own event handlers for client-side routing. 
+
+An alternative to this is to use another hosting platform. A great free option is firebase hosting
 
 Solution
 
