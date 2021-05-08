@@ -62,6 +62,14 @@ Put your main code in a directory. You can name it anything.
 ```
 Then, follow the normal directions for firebase hosting. Select the directory that you put your main code in when it asks for a ```/public``` folder.
 
+The `group()` function
+------
+It has been brought to my attention that brython supports giving a list of children, so this function is unnecessary. I will not delete it as it is used quite a lot in this file.
+
+If you would like to see what to use instead of `group()`, view [this](https://github.com/dewball345/Breact/issues/2) issue
+
+
+
 Examples
 ------ 
 An example breact project can be found at:
