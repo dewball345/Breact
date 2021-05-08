@@ -23,8 +23,10 @@ class StatefulSegment(Base):
     def update(self):
         pass
     def setState(self, attrs, one_state_change=False):
-        for attr in attrs.keys():
-            self.state[attr] = attrs[attr]
+        self.state.update(attrs) 
+        # Old code
+#         for attr in attrs.keys():
+#             self.state[attr] = attrs[attr]
         del document[self.oi.innerId]
         self.oi.content = html.DIV(id=self.oi.innerId)
         self.oi.content <= self.update(one_state_change)
