@@ -6,7 +6,7 @@ Breact is similar to react, with components and state. The main difference, howe
 is that Breact doesn't have a virtual dom; 
 instead, each stateful element (element that uses setState) is assigned a unique id and is retrieved
 and changed when necessary. There isn't much that I have added - just the bare minimum, for now. The source
-code is around 40 lines of code and the simple hash router, which is a python implementation of the simple
+code is around 100 lines of code and the simple hash router, which is a python implementation of the simple
 router in Dev.to's tutorial, caps at around 50. 
 You can find the tutorial at: https://dev.to/pixari/build-a-very-basic-spa-javascript-router-2k4p
 
