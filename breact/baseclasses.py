@@ -24,10 +24,13 @@ class StatefulSegment(Base):
     def update(self):
         pass
     def setState(self, attrs, one_state_change=False):
-#         state_copy = self.state.copy()
-        self.state.update(attrs)
-#         if self.state == state_copy:
-#             return;
+        # for attr in attrs.keys():
+        #     self.state[attr] = attrs[attr]
+        if(len(attrs.keys()) > 0):
+            state_copy = self.state.copy()
+            self.state.update(attrs)
+            if self.state == state_copy:
+                return; 
         def find_diffs(o, n, op):
             oldChildren = o
             newChildren = n
@@ -39,12 +42,12 @@ class StatefulSegment(Base):
                     else:
                         find_diffs(oldChildren[i].children, newChildren[i].children, oldChildren[i])
                 elif(str(oldChildren[i]) != str(newChildren[i])):
-                    print(str(oldChildren[i]), "not_equal_to", str(newChildren[i]))
+                    # print(str(oldChildren[i]), "not_equal_to", str(newChildren[i]))
                     oldChildren[i].parentNode.replaceChild(newChildren[i], oldChildren[i])
 
             if len(newChildren) > len(oldChildren):
                 for i in newChildren[len(oldChildren):]:
-                    print(str(i))
+                    # print(str(i))
                     op <= i
             elif len(oldChildren) > len(newChildren):
                 for i in oldChildren[len(newChildren):]:
@@ -66,7 +69,8 @@ class OLD_StatefulSegment(Base):
     def update(self):
         pass
     def setState(self, attrs, one_state_change=False):
-        self.state.update(attrs) 
+        if(len(attrs.keys()) > 0):
+            self.state.update(attrs) 
         # Old code
 #         for attr in attrs.keys():
 #             self.state[attr] = attrs[attr]
