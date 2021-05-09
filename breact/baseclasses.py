@@ -24,10 +24,10 @@ class StatefulSegment(Base):
     def update(self):
         pass
     def setState(self, attrs, one_state_change=False):
-        state_copy = self.state.copy()
+#         state_copy = self.state.copy()
         self.state.update(attrs)
-        if self.state == state_copy:
-            return;
+#         if self.state == state_copy:
+#             return;
         def find_diffs(o, n, op):
             oldChildren = o
             newChildren = n
