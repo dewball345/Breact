@@ -7,8 +7,8 @@ class Base:
 
 class GenerateContainers:
     def __init__(self):
-        self.outerId = "id" + str(random.randint(1, 999999999))
-        self.innerId = "id" + str(random.randint(1, 999999999))
+        self.outerId = "id" + str(random.randint(1, 9999999999))
+        self.innerId = "id" + str(random.randint(1, 9999999999))
         self.container = html.DIV(id=self.outerId)
         self.content = html.DIV(id=self.innerId)
 
@@ -26,11 +26,21 @@ class StatefulSegment(Base):
     def setState(self, attrs, one_state_change=False):
         # for attr in attrs.keys():
         #     self.state[attr] = attrs[attr]
+
         if(len(attrs.keys()) > 0):
-            state_copy = self.state.copy()
             self.state.update(attrs)
-            if self.state == state_copy:
-                return; 
+
+        #REMOVED COPY DETECTION, CODE DOESN'T WORK
+        # print("HERE")
+        # if(len(attrs.keys()) > 0 and not disable_copy):
+        #     print(attrs.keys())
+        #     state_copy = str(self.state)
+        #     self.state.update(attrs)
+        #     if str(self.state) == state_copy:
+        #         print("SAME", self.state, state_copy)
+        #         return;
+
+        # print("reach") 
         def find_diffs(o, n, op):
             oldChildren = o
             newChildren = n
@@ -47,12 +57,15 @@ class StatefulSegment(Base):
 
             if len(newChildren) > len(oldChildren):
                 for i in newChildren[len(oldChildren):]:
+                    # print("APPEND")
                     # print(str(i))
                     op <= i
             elif len(oldChildren) > len(newChildren):
                 for i in oldChildren[len(newChildren):]:
+                    # print("REVOKE")
+                    # print(str(i))
                     i.remove()
-        print("SETSTATE")
+        # print("SETSTATE")
         old = document[self.oi.innerId].children
         update = self.update(one_state_change)
         uChildren = [update]
