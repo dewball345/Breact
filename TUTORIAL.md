@@ -187,6 +187,10 @@ def group(parent, children):
    return parent
 ```
 
+#### Edit: 5/9/2021 
+
+Brython supports passing in a list of nested children. Therefore, you do not need the group() function. Instead, please pass the list of children as the first argument.
+
 With this in mind, here's how you translate that python code into JSX
 
 ```
@@ -246,7 +250,11 @@ Here we initialize our function with a constructor. We define our state variable
 
 Breact's main difference in react is that there is no virtual dom; instead, stateful components are marked with a unique id, and are referenced and changed during setState(). 
 Each stateful component is wrapped with two containers- an outer one(for identifying the stateful component), and an inner one(for identifying the content within the component
-to replace)
+to replace).
+
+Once Breact identifies the containers that are needed to change state, it then uses a dom-diffing algorithm to identify which exact parts have changed. This is to prevent unnecessarily erasing and rewriting big Stateful components. 
+
+Prior to 5/8/2021, Breact used to just delete and rerender the entire stateful component. If ```StatefulSegment``` does not work for you, or for some reason you want to use the old method, use the ```OLD_StatefulSegment``` class instead. 
 
 the ```GenerateContainers``` class generates the unique containers with unique ids, and they are stored in the ```self.oi``` instance variable.
 
