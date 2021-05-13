@@ -17,6 +17,21 @@ Breact is powered by Brython.
 Contributions are welcome as the project is largely unfinished; for example, sanitizing data to prevent XSS
 attacts, lifecycle methods, and many more need to be implemented.
 
+
+Breact vs Ryact
+--------
+Breact has a sister framework, Ryact. They are both similar in different. Here is a table to help you choose that framework that you may need.
+
+| Breact  | Ryact |
+| ------------- | ------------- |
+| Designed for easy development  | Designed for speed; development may be harder  |
+| Full python syntax  | Mostly python syntax, but some things, like: casting, lambdas, etc. may not work. Check the rapydscript documentation for more info  |
+| Super slow speed  | Blazing fast code |
+| Code is not precompiled in advance, and supports live reload | Code is precompiled in advance, which makes things faster; you have to run the compile function before seeing changes|
+| You can use custom python modules | you cannot use many custom python modules |
+
+choose wisely
+
 Installation
 -------
 
